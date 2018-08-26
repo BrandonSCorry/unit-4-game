@@ -1,0 +1,60 @@
+using $.each - try to 1) display each crystal image 2) assign each crystal a hidden random number 
+   and 3) assign each crystal name to match with  
+
+update - clear score to 0, re-randomize crystal values and target(random number
+
+update - wins++; losses++
+
+
+target(random number) value between 19-125
+
+individual crystals between 1-12
+
+
+
+1. layout
+  - title
+   - rules
+   game displays: 
+     -random target number random between 19-125, 
+     -4 crystal image on click options (randomized # between 1-12)
+     -user total score from crystal clicks (add)
+     - wins/losses
+
+2. randomize target number floor...random * ... 19-125
+   (how to randomize between 2 specific #s)
+
+3. assign each crystal to random number... 1-12
+
+
+4. on crystal click add the crystal random value number to the user total score
+    -as long as user #is less than total score keep playing
+
+5. if users total # == target # then
+     - wins++
+     - (update) reassign each crystals random value number
+     - (update)reassign target number to diff random # 19-125
+     - reset users score back to 0
+
+6. if users total score is higher than the target number
+     - losses++
+     - (update) reassign each crystals random value number
+     - (update)reassign target number to diff random # 19-125
+
+
+
+
+what ive done so far:
+
+generate images & image ID
+
+generate random total crystal target number
+
+todo: add individual crystal rand num to userTotal
+
+
+
+
+
+     - reset users score back to 0
+    
