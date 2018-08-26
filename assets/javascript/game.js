@@ -1,4 +1,5 @@
-//TODO: fix so all variables on html screen reset on win/lose condition!! -look back at word guess game, make all variables reset on win / lose and add to win/lose counter!!
+//TODO: last thing to fix it! re-randomize individual crystals on reset, currently randomized numbers are global - need to put in gameStart function!!
+//TODO: after it works, try to make more things 'DRY'
 //Crystal random number game
 //$().html (and .innerHTML) rewrite content, use $.append and and then reset on gamestart/update?
 //jQuery document on ready load JS
@@ -52,94 +53,102 @@ $(document).ready(function() {
   function gameStart () {
 
     //get new random crystal total target number
+
     randCrystalTotal();
 
-    //html reset variables
-    userTotal = 0;
-    $("#crystalsContainer").empty();
-    $("#crystalTotal").html(crystalTotal);
-    $("#userTotal").html(userTotal);
-    $("#wins").html(wins);
-    $("#losses").html(losses);
+    //TODO: get new random individual crystal number for each crystal
+    // $(crystals).each(function (j) {
+    //   var count = 0;
+    //   crystals.number2 = "testing add object prop" + count + j;
+    //   console.log(crystals.number2);
+    // });
+    // console.log(crystals.number2);
+    // console.log(crystals);
+
+
+      //html reset variables
+      userTotal = 0;
+      $("#crystalsContainer").empty();
+      $("#crystalTotal").html(crystalTotal);
+      $("#userTotal").html(userTotal);
+      $("#wins").html(wins);
+      $("#losses").html(losses);
+
+
+      var num = 0;
+
+
+      $.each(crystals, function (key, value) {
+        console.log(key, value);
+
+
+        //how to use objName to label each one
+
+        //assign random number to crystal & store it in object array?
+        // var num = Math.floor(Math.random() * 12) + 1;
+        // var objNum= this.num;
+        //
+        // $.extend(crystals, {"number" : objNum});
+
+        console.log(crystals);
+        console.log(userTotal);
+        console.log(num);
+
+
+        console.log("Crystal: " + this.name);
+        //generate crystal images - done for now
+
+        var objCrystals = this.img;
+        $("#crystalsContainer").append("<img class='crystal' src='" + objCrystals + "'>");
+        // console.log(objCrystals)
+
+        console.log("Crystal image: " + this.img);
+        //assign number to each crystal button/img
+
+
+        console.log("secretNumber: " + this.number);
+
+        //assign name to crystal img id
+        // var objName = this.name;
+        // idCount = 0;
+        // idCount++;
+        // $('.crystal').attr("id", "crystal" + idCount);
 
 
 
 
-
-    var num = 0;
-
-
-    $.each(crystals, function(key, value){
-      console.log(key,value);
-
-
-      //how to use objName to label each one
-
-      //assign random number to crystal & store it in object array?
-      // var num = Math.floor(Math.random() * 12) + 1;
-      // var objNum= this.num;
-      //
-      // $.extend(crystals, {"number" : objNum});
-
-      console.log(crystals);
-      console.log(userTotal);
-      console.log(num);
+        // $(".closethis").click(function(){
+        //   var $this = $(this).parent().parent();
+        //   if ($this.attr("id") == "mainArea") {
+        //     $("#myTbl").removeClass("myClass");
+        //   }
+        // });
 
 
-      console.log("Crystal: " + this.name);
-      //generate crystal images - done for now
-
-      var objCrystals = this.img;
-      $("#crystalsContainer").append("<img class='crystal' src='" + objCrystals + "'>");
-      // console.log(objCrystals)
-
-      console.log("Crystal image: " + this.img);
-      //assign number to each crystal button/img
-
-
-      console.log("secretNumber: " + this.number);
-
-      //assign name to crystal img id
-      // var objName = this.name;
-      // idCount = 0;
-      // idCount++;
-      // $('.crystal').attr("id", "crystal" + idCount);
-
-      $("img.crystal").each(function(i) {
-        var count = 0;
-        $(this).attr('id', "crystal" + (count + i)); //FINALLY!
+        //need to use a counter? or something to make sure id doesn't over write and end up as all the last obj property value
       });
 
-
-      // $(".closethis").click(function(){
-      //   var $this = $(this).parent().parent();
-      //   if ($this.attr("id") == "mainArea") {
-      //     $("#myTbl").removeClass("myClass");
-      //   }
-      // });
-
-
-      //need to use a counter? or something to make sure id doesn't over write and end up as all the last obj property value
+    $("img.crystal").each(function (i) {
+      var count = 0;
+      $(this).attr('id', "crystal" + (count + i)); //FINALLY!
     });
-  }
+    }
 
   function checkTotal() {
     //  checkTotal function to check userTotal against target random total 19-125
     //if win condition , else lose condition - put into checkTotal function? with true/false value
 
     if (userTotal === crystalTotal) {
-      //fix to correctly update and display wins counter
       wins++;
       $("#wins").html(wins);
       alert("win condition");
       console.log(wins);
-      reset();
+      gameStart();
       console.log(id);
       console.log(num);
     }
 
     else if (userTotal > crystalTotal ) {
-      //fix to correctly update and display losses counter
       losses++;
       $("#losses").html(losses);
       alert("lose condition");
@@ -226,6 +235,7 @@ $(document).ready(function() {
     //if statement
     id = event.target.id;
 
+
     if (event.target.id === "crystal0") {
       //get stored array random number 1-12 for individual crystals
       num = randNumberArr[0];
@@ -233,7 +243,10 @@ $(document).ready(function() {
       console.log('Image clicked: ' + $("img.crystal").attr('id'));
 
       id = 0;
+      console.log(id);
+
       //get random number 1-12 and then assign it to redCrystal
+
     }
     else if (event.target.id === "crystal1") {
       num = randNumberArr[1];
@@ -248,13 +261,16 @@ $(document).ready(function() {
     else if (event.target.id === "crystal2") {
       num = randNumberArr[2];
       console.log(num);
-      console.log(id);
       id = 2;
+      console.log(id);
+
       //get random number 1-12 and then assign it to redCrystal
     }
     else if (event.target.id === "crystal3") {
       num = randNumberArr[3];
       id = 3;
+      console.log(id);
+
       //get random number 1-12 and then assign it to redCrystal
     }
  // add random num from crystal to userTotal
@@ -278,7 +294,8 @@ $(document).ready(function() {
 
   //jQuery on click event listener for crystals
   //dont put random num gen on click!! do it on win or lose, also win++, lose++ respectively
-  $("#crystalsContainer img").click(function() {
+  //$document.on ... etc fixed reset click functionality, using $('#id').click(function... did not work
+  $(document).on("click", "#crystalsContainer img", function() {
     update();
     checkTotal();
 
