@@ -21,43 +21,64 @@
   <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h2><strong>Instructions</strong> ...</h2>
-      <!-- show randomized 19-125 target number -->
+      <h3><strong>Instructions</strong></h3>
+      <p>
+        each crystal contains a hidden number...
+      </p>
+      <p>
+        click the crystal to add it's number to your score....
+      </p>
+      <p>
+         match your <strong>score</strong> with the <strong>goal</strong> to <strong>win</strong>
+      </p>
     </div>
   </div>
     <div class="row">
-    <div class="col-md-6">
-      <h3>target score</h3>
-      <div id ="crystalTotal">
+      <div class="col-md-4">
+        <div class="row">
+          <h3>score</h3> <!-- put equal sign in middle div, create middle div and change to col-md-4 -->
+          <!-- show user's total score-->
+        </div>
+        <div class="row">
+          <div id="userTotal">
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-md-6">
-      <h3>your score</h3>
-      <!-- show user's total score-->
-      <div id="userTotal">
+      <div class="col-md-4">
+        <p class="big-font">=</p>
       </div>
-    </div>
-  </div>
+      <div class="col-md-4">
+        <div class="row">
+          <h3>goal</h3>
+        </div>
+        <div class="row">
+          <div id ="crystalTotal">
+          </div>
+        </div>
+        <!-- show randomized 19-125 goal number -->
 
-  <div class="row">
-    <div class="col-md-12">
-      <h3>Crystals</h3>
-      <!-- show crystals -->
-      <div id="crystalsContainer">
-          </div>
+       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <h3>Wins</h3>
-      <!-- win counter -->
-      <div id="wins">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Crystals</h3>
+        <!-- show crystals -->
+        <div id="crystalsContainer">
           </div>
+      </div>
     </div>
-    <div class="col-md-6">
-      <h3>Losses</h3>
-      <!-- loss counter -->
-      <div id= "losses">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>wins</h3>
+        <!-- win counter -->
+        <div id="wins">
+          </div>
+      </div>
+      <div class="col-md-6">
+        <h3>losses</h3>
+        <!-- loss counter -->
+        <div id= "losses">
+        </div>
       </div>
     </div>
   </div>
