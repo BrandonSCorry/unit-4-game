@@ -1,22 +1,29 @@
+.container {
+  max-width: 960px;
+}
+h1, h2, h3, .center {
+  text-align: center;
+}
+
+#crystalTotal, #userTotal, #wins, #losses {
+  text-align: center;
+}
+div#crystalsContainer {
+  padding: 1em 2em;
+}
 img.crystal {
-  width: 15rem;
-  margin: 0 1rem;
+  width: 22%;
+  margin: 0 1.3rem;
   cursor: pointer;
 }
 
 
-h1 {
-  text-align: center;
-}
 
 
-.container {
-  max-width: 960px;
-}
 
-div#crystalsContainer {
-   padding: 1em 2em;
-}
+
+
+
 
 /*
 TODO: center crystals inside container, make responsive. in HTML add col-sm-6 or equiv for 2 crystals per line on smaller devices
