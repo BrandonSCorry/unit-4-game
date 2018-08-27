@@ -7,6 +7,7 @@ h1, h2, h3, .center {
 
 #crystalTotal, #userTotal, #wins, #losses {
   text-align: center;
+  font-size: x-large;
 }
 div#crystalsContainer {
   padding: 1em 2em;
@@ -26,5 +27,7 @@ img.crystal {
 
 
 /*
-TODO: center crystals inside container, make responsive. in HTML add col-sm-6 or equiv for 2 crystals per line on smaller devices
+TODO: make responsive. in HTML add col-sm-6 or equiv for 2 crystals per line on smaller devices.
+
+TODO: in html also put targetscore & userscore divs in same row and wins & losses in same row 50% each, using col-md-6
  */
