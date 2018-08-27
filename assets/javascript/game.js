@@ -11,15 +11,15 @@ $(document).ready(function() {
   //TODO: assign crystals.name to correct button/image!
 
   //TODO: rand number array / should loop this!!
-  var randNumberArr = [Math.floor(Math.random() * 12) + 1, Math.floor(Math.random() * 12) + 1, Math.floor(Math.random() * 12) + 1, Math.floor(Math.random() * 12) + 1];
+  var randNumberArr = [];
 
 
   //use method for number to generate random num?
   var crystals = [
-    {name: 'redCrystal', img: './assets/images/red.jpg', number: randNumberArr[0]},
-    {name: 'blueCrystal', img: './assets/images/blue.jpg', number: randNumberArr[1]},
-    {name: 'yellowCrystal', img: './assets/images/yellow.jpg', number: randNumberArr[2]},
-    {name: 'greenCrystal', img: './assets/images/green.jpg', number: randNumberArr[3]}
+    {name: 'redCrystal', img: './assets/images/red.jpg', number:""},
+    {name: 'blueCrystal', img: './assets/images/blue.jpg', number: ""},
+    {name: 'yellowCrystal', img: './assets/images/yellow.jpg', number: ""},
+    {name: 'greenCrystal', img: './assets/images/green.jpg', number: ""}
   ];
 
   console.log(crystals);
@@ -42,21 +42,21 @@ $(document).ready(function() {
     console.log(crystalTotal);
   }
 //dynamic numbers based on arguments passed in function
-  function randCrystalNum(min, max) {
-    crystalNum = Math.floor(Math.random() * (max - min) ) + min;
-    console.log(crystalNum);
+  function randCrystalNum() {
+    //for each object array?
+    //TODO: rand number array / should loop this!!
+     randNumberArr = [Math.floor(Math.random() * 12) + 1, Math.floor(Math.random() * 12) + 1, Math.floor(Math.random() * 12) + 1, Math.floor(Math.random() * 12) + 1];
+      console.log(crystalNum); //TODO: got random numbers, how to assign to crystals object?
+
   }
-  // randCrystalTotal(); //run this function before reset or inside? to get new number
-  console.log(crystalTotal);
-  console.log(crystalTotal);
 
   function gameStart () {
 
     //get new random crystal total target number
-
     randCrystalTotal();
 
     //TODO: get new random individual crystal number for each crystal
+     randCrystalNum();
     // $(crystals).each(function (j) {
     //   var count = 0;
     //   crystals.number2 = "testing add object prop" + count + j;
@@ -139,25 +139,31 @@ $(document).ready(function() {
     //if win condition , else lose condition - put into checkTotal function? with true/false value
 
     if (userTotal === crystalTotal) {
+      $("#userTotal").html(userTotal);
+
       wins++;
       $("#wins").html(wins);
-      alert("win condition");
       console.log(wins);
-      gameStart();
+
       console.log(id);
       console.log(num);
+      alert("WIN! Your total: " + userTotal + " is equal to the target number: " + crystalTotal);
+      gameStart();
     }
 
     else if (userTotal > crystalTotal ) {
+      $("#userTotal").html(userTotal);
+
       losses++;
       $("#losses").html(losses);
-      alert("lose condition");
-
       console.log(losses);
-      gameStart();
+
       console.log(id);
       console.log(num);
+      alert("You lost. Your total: " + userTotal + " is > the target number: " + crystalTotal);
+      gameStart();
     }
+
     console.log(userTotal);
     console.log(crystalTotal);
   }
