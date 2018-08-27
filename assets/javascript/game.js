@@ -124,7 +124,7 @@ $(document).ready(function() {
 
       console.log(id);
       console.log(num);
-      alert("WIN! Your total: " + userTotal + " is equal to the target number: " + crystalTotal);
+      alert("WIN! Your score: " + userTotal + " is equal to the target: " + crystalTotal);
       gameStart();
     }
      // lose condition
@@ -137,7 +137,7 @@ $(document).ready(function() {
 
       console.log(id);
       console.log(num);
-      alert("You lost. Your total: " + userTotal + " is > the target number: " + crystalTotal);
+      alert("You lost. Your score: " + userTotal + " is > the target: " + crystalTotal);
       gameStart();
     }
 
