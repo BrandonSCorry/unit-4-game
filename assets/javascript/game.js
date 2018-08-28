@@ -19,7 +19,6 @@ $(document).ready(function() {
 //set values to 0 on doc ready
   var userTotal = 0;
   var crystalTotal = 0;
-  var crystalNum = 0;
   var id;
   var wins = 0;
   var losses = 0;
