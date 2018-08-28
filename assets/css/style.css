@@ -1,41 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:500');
+
+/* global style */
+body {
+  font-family: 'Work Sans', Helvetica, sans-serif;
+  background:
+      linear-gradient(
+          rgba(0, 0, 0, 0.1),
+          rgba(0, 0, 0, 0.1)
+      ),
+      url("../images/bg.jpg");
+  background-size: cover;
+ min-height:100%
+}
+h1, h2, h3 {
+  text-align: center;
+}
+h1 {
+  margin: 0;
+  padding: 1.25rem 0;
+  font-weight: bold;
+}
+h3 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+p {
+  text-align: center;
+  margin-bottom: 0.1rem;
+  font-size: large;
+}
+
+/* global classes */
+p.big-font {
+  font-size: xx-large;
+  padding: 1em 0;
+}
 .container {
   max-width: 960px;
 }
-h1, h2, h3, .center {
-  text-align: center;
+
+/* header */
+header.container {
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.95);
+
 }
 
-#crystalTotal, #userTotal, #wins, #losses {
-  text-align: center;
-  font-size: x-large;
+/* main */
+main.container {
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 0 0 12px 12px;
+  padding-bottom: 3rem;
 }
+
+main p {
+  font-weight: bold;
+}
+
+/* div ids */
 div#crystalsContainer {
   padding: 1em 2em;
 }
+#crystalTotal, #userTotal, #wins, #losses {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+}
+/* imgs */
 img.crystal {
   width: 22%;
   margin: 0 1.3rem;
   cursor: pointer;
-}
-
-.row p {
-  text-align: center;
-  margin-bottom: 0.1rem;
-}
-
-.big-font {
-  font-size: xx-large;
-  padding: 1em 0;
+  border: black 0.375rem solid;
+  border-radius: 6px;
 }
 
 
-
-
-
-
-
-/*
-TODO: make responsive. in HTML add col-sm-6 or equiv for 2 crystals per line on smaller devices.
-
-TODO: in html also put targetscore & userscore divs in same row and wins & losses in same row 50% each, using col-md-6
- */
