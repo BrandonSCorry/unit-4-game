@@ -9,7 +9,6 @@ body {
           rgba(0, 0, 0, 0.1)
       ),
       url("../images/bg.jpg");
-  background-size: cover;
   position: relative;
   float: left;
   width: 100%;
