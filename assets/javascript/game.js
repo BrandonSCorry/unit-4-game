@@ -73,31 +73,6 @@ $(document).ready(function() {
     });
   }
 
-  function checkTotal() {
-    //  checkTotal function to check userTotal against target random total 19-125
-
-    //win condition
-    if (userTotal === crystalTotal) {
-
-      $("#userTotal").html(userTotal);
-      wins++;
-      $("#wins").html(wins);
-
-      alert("WIN! Your score: " + userTotal + " is equal to the goal: " + crystalTotal);
-      gameStart();
-    }
-    // lose condition
-    else if (userTotal > crystalTotal ) {
-
-      $("#userTotal").html(userTotal);
-      losses++;
-      $("#losses").html(losses);
-
-      alert("You lost. Your score: " + userTotal + " is > the goal: " + crystalTotal);
-      gameStart();
-    }
-  }
-
   //update on click - check which crystal is clicked and assign random number 1-12 to num with randNumberArr
   function update() {
     //checks which crystal is clicked, gets random number from array,
@@ -123,6 +98,28 @@ $(document).ready(function() {
 
     //push userTotal to page w jquery
     $("#userTotal").html(userTotal);
+  }
+  function checkTotal() {
+    //  checkTotal function to check userTotal against target random total 19-125
+
+    //win condition
+    if (userTotal === crystalTotal) {
+      wins++;
+      $("#wins").html(wins);
+
+      alert("WIN! Your score: " + userTotal + " is equal to the goal: " + crystalTotal);
+      gameStart();
+    }
+    // lose condition
+    else if (userTotal > crystalTotal ) {
+
+      $("#userTotal").html(userTotal);
+      losses++;
+      $("#losses").html(losses);
+
+      alert("You lost. Your score: " + userTotal + " is > the goal: " + crystalTotal);
+      gameStart();
+    }
   }
 
 // gameStart function
