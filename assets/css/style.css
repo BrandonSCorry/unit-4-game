@@ -40,6 +40,9 @@ p.big-font {
 }
 
 /* header */
+header {
+  margin-top: 2rem;
+}
 header.container {
   background: rgb(255, 255, 255);
   background: rgba(255, 255, 255, 0.95);
